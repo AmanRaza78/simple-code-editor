@@ -34,12 +34,12 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   return (
     <>
       <div className="flex flex-col w-[50%] m-8 gap-y-4">
-        <Button variant="outline" onClick={runCode}>
+        <Button variant="outline" onClick={runCode} className="bg-primary hover:bg-violet-600">
           Run Code
         </Button>
         <div
           className={`h-[100%] w-full border p-4 ${
-            isError ? "border-red-500" : "border-gray-300"
+            isError ? "border-red-500" : "border-primary"
           }`}
         >
           {output

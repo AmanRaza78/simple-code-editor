@@ -25,14 +25,14 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex justify-between items-center m-8">
-        <div></div>
-        <h1 className="font-semibold text-2xl">Simple Code Editor</h1>
-        <ModeToggle />
-      </div>
+      <nav className="flex justify-between items-center bg-primary w-full p-3 shadow-lg">
+          <div></div>
+          <h1 className="font-semibold text-2xl">Simple Code Editor</h1>
+          <ModeToggle />
+      </nav>
 
-      <div className="flex">
-        <div className="flex flex-col w-[50%] m-8 gap-y-4">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col w-full sm:w-1/2 m-8 gap-y-4">
           <LanguageSelector lang={language} onSelect={onSelect} />
           <Editor
             height="75vh"
@@ -46,8 +46,7 @@ export default function Home() {
           />
         </div>
 
-        <Output editorRef={editorRef} language={language}/> 
-        
+        <Output editorRef={editorRef} language={language} />
       </div>
     </>
   );
